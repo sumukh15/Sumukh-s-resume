@@ -1,183 +1,162 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Monospace", sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            transition: all 0.6s ease;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            transition: all 0.6s ease;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.6s ease;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            transition: all 0.6s ease;
+        }
+
+        .header.minimized img,
+        .header.minimized h1 {
+            width: 30px;
+            font-size: 1.2rem;
+        }
+
+        .content-box {
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            padding: 20px;
+            width: 60%;
+            transition: all 0.6s ease;
+        }
+
+        .skills,
+        .experience {
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            width: 50px;
+        }
+
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;My Resume Website&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: "Monospace";</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.5s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 150px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 150px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.5s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.5s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.sticky {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>right: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(0.5);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.8;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.text-box {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 60%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.5s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skills, .experience {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>right: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 20%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #111;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.9;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.arrow-up {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>right: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.arrow-up:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hidden {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(100%);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.visible {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(0);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="intro" id="page1"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="your-photo.jpg" alt="Your Photo" id="photo"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 id="name"&gt;Your Name&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="page2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-box" id="about"&gt;A short summary about you.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skills"&gt;Your Skills&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="page3"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-box hidden" id="experience1"&gt;Work Experience 1&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="page4"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-box hidden" id="experience2"&gt;Work Experience 2&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="arrow-up.png" alt="Back to Top" class="arrow-up" onclick="scrollToTop()"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const photo = document.getElementById("photo");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const name = document.getElementById("name");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const textBox1 = document.getElementById("about");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const experience1 = document.getElementById("experience1");</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const experience2 = document.getElementById("experience2");</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener("scroll", () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const scrollY = window.scrollY;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>const windowHeight = window.innerHeight;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (scrollY &gt;= windowHeight) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>photo.classList.add("sticky");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>name.classList.add("sticky");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>textBox1.classList.remove("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>textBox1.classList.add("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>photo.classList.remove("sticky");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>name.classList.remove("sticky");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>textBox1.classList.add("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>textBox1.classList.remove("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (scrollY &gt;= windowHeight * 2) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience1.classList.remove("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience1.classList.add("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience1.classList.add("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience1.classList.remove("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if (scrollY &gt;= windowHeight * 3) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience2.classList.remove("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience2.classList.add("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience2.classList.add("hidden");</p>
-<p class="p1"><span class="Apple-converted-space">                </span>experience2.classList.remove("visible");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function scrollToTop() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>window.scrollTo({ top: 0, behavior: "smooth" });</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <header class="header">
+        <img src="your-photo.jpg" alt="Me:">
+        <h1>Sumukh Raj</h1>
+    </header>
+
+    <main class="container">
+        <section>
+            <div class="content-box">
+                <h2>About Me</h2>
+                <p>I am an enthusiastic and committed high school student looking for a
+part-time role at a retail store to acquire practical work experience,
+contribute to a dynamic team, and enhance customer service and
+sales abilities. Looking to improve individual skills. to work in new,
+unfamiliar environments and meet new people.</p>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Time Management</li>
+                        <li>Leadership</li>
+                        <li>Verbal & Written Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="content-box">
+                <h2>Work Experience</h2>
+                <p>Piara Grocer - Retail Assistant
+                   December 2021 - February 2022
+Managed all store operations in an the grocery shop, handling
+diverse responsibilities including inventory management, customer
+service, and daily upkeep. Solely responsible for ensuring smooth
+operations and providing excellent service in a customer-centric
+environment. Achieved success in implementing inventory systems,
+managing peak hours, and fostering strong customer relationships.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="content-box">
+                <h2>Additional Work Experience</h2>
+                <p>Volunteering at Sunrise Family Day Care involved aiding educators
+in children's activities and liaising closely with parents. I assisted in
+organising developmental exercises, contributing to a nurturing
+environment for learning. Interacting with parents, I provided
+valuable support and updates on their child's progress, fostering
+trust within the daycare community. This experience honed my
+communication skills and emphasised the importance of
+collaborative efforts in children's growth, while establishing
+meaningful connections with families in a childcare setting.</p>
+            </div>
+        </section>
+
+        <img src="up-arrow.png" alt="Back to Top" class="back-to-top" onclick="scrollToTop()">
+    </main>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector(".header");
+            if (window.scrollY > 50) {
+                header.classList.add("minimized");
+            } else {
+                header.classList.remove("minimized");
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
 </body>
 </html>
