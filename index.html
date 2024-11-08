@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>My Stylish Resume</title>
     <style>
-        /* General styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -14,149 +14,164 @@
         }
 
         body {
-            font-family: "Monospace", sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
             overflow-x: hidden;
-        }
-
-        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-            padding: 20px;
-            transition: all 0.6s ease;
+            flex-direction: column;
+            transition: background-color 0.5s ease;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            position: relative;
+        h1, h2, p {
+            margin: 0 0 15px;
         }
 
+        /* Header and Centered Image */
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            position: fixed;
+            position: relative;
             width: 100%;
-            background-color: #ffffff;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            top: 20px;
+            transition: top 0.5s ease, opacity 0.5s ease;
             z-index: 10;
-            transition: all 0.6s ease;
         }
 
         .header img {
-            width: 50px;
-            height: 50px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.6s ease;
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            margin-left: 20px;
+            color: #fff;
             transition: all 0.6s ease;
         }
 
-        .header.minimized img,
-        .header.minimized h1 {
-            width: 30px;
-            font-size: 1.2rem;
+        .header.minimized {
+            top: 0;
+            opacity: 0;
+            transform: scale(0.5);
         }
 
+        /* Content Box */
         .content-box {
-            background-color: #f0f0f0;
-            border-radius: 15px;
-            padding: 20px;
-            width: 60%;
-            transition: all 0.6s ease;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 600px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            text-align: center;
+            opacity: 1;
         }
 
-        .skills,
-        .experience {
-            margin-top: 20px;
-        }
-
-        .back-to-top {
+        /* Animated Up Arrow */
+        .up-arrow {
             position: fixed;
             bottom: 20px;
             right: 20px;
             cursor: pointer;
-            width: 50px;
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.3);
+        }
+
+        .up-arrow:hover {
+            transform: scale(1.5);
+        }
+
+        /* Animations */
+        .content-box h2, .content-box p {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .content-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            text-align: left;
+            margin-top: 20px;
+            list-style: none;
+            color: #ddd;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
     </style>
 </head>
 <body>
-    <header class="header">
-        <img src="your-photo.jpg" alt="Me:">
-        <h1>Sumukh Raj</h1>
-    </header>
 
-    <main class="container">
-        <section>
-            <div class="content-box">
-                <h2>About Me</h2>
-                <p>I am an enthusiastic and committed high school student looking for a
-part-time role at a retail store to acquire practical work experience,
-contribute to a dynamic team, and enhance customer service and
-sales abilities. Looking to improve individual skills. to work in new,
-unfamiliar environments and meet new people.</p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Time Management</li>
-                        <li>Leadership</li>
-                        <li>Verbal & Written Communication</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <!-- Header with Profile Image and Name -->
+    <div class="header">
+        <img src="your-photo.jpg" alt="Your Photo">
+        <h1>Your Name</h1>
+    </div>
 
-        <section>
-            <div class="content-box">
-                <h2>Work Experience</h2>
-                <p>Piara Grocer - Retail Assistant
-                   December 2021 - February 2022
-Managed all store operations in an the grocery shop, handling
-diverse responsibilities including inventory management, customer
-service, and daily upkeep. Solely responsible for ensuring smooth
-operations and providing excellent service in a customer-centric
-environment. Achieved success in implementing inventory systems,
-managing peak hours, and fostering strong customer relationships.</p>
-            </div>
-        </section>
+    <!-- Main Content Box in the Center -->
+    <div class="content-box">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer with a strong background in front-end and back-end technologies. I love creating intuitive and user-friendly websites. My goal is to build applications that improve people's lives.</p>
 
-        <section>
-            <div class="content-box">
-                <h2>Additional Work Experience</h2>
-                <p>Volunteering at Sunrise Family Day Care involved aiding educators
-in children's activities and liaising closely with parents. I assisted in
-organising developmental exercises, contributing to a nurturing
-environment for learning. Interacting with parents, I provided
-valuable support and updates on their child's progress, fostering
-trust within the daycare community. This experience honed my
-communication skills and emphasised the importance of
-collaborative efforts in children's growth, while establishing
-meaningful connections with families in a childcare setting.</p>
-            </div>
-        </section>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML, CSS, JavaScript</li>
+            <li>React, Node.js</li>
+            <li>Python, Django</li>
+            <li>UI/UX Design</li>
+        </ul>
+    </div>
 
-        <img src="up-arrow.png" alt="Back to Top" class="back-to-top" onclick="scrollToTop()">
-    </main>
+    <!-- Back to Top Arrow -->
+    <img src="up-arrow.png" alt="Back to Top" class="up-arrow" onclick="scrollToTop()">
 
     <script>
         window.addEventListener("scroll", function() {
             const header = document.querySelector(".header");
-            if (window.scrollY > 50) {
+            const contentBox = document.querySelector(".content-box");
+            const upArrow = document.querySelector(".up-arrow");
+
+            if (window.scrollY > 100) {
                 header.classList.add("minimized");
+                contentBox.style.transform = "translateY(-100px)";
+                contentBox.style.opacity = "0.6";
             } else {
                 header.classList.remove("minimized");
+                contentBox.style.transform = "translateY(0)";
+                contentBox.style.opacity = "1";
+            }
+
+            if (window.scrollY > 200) {
+                upArrow.style.opacity = "1";
+            } else {
+                upArrow.style.opacity = "0";
             }
         });
 
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+
 </body>
 </html>
